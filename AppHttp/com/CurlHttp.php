@@ -102,7 +102,7 @@
 	        if($fp === false){
 	            throw new Exception('Connect failed , error code: ' . $errorCode . ', error info: ' . $errorInfo);
 	        }else{
-	                
+	            
 	            $http  = "$method $path HTTP/1.1\r\n";
 	            $http .= "Host: $host\r\n";
 	            $http .= "Content-type: application/x-www-form-urlencoded\r\n";
