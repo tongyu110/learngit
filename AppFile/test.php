@@ -7,7 +7,6 @@ if(!file_exists($file)) {
     echo '文件不存在';exit;
 }
 
-
 $new_file = './static/abu-2018-plan1.docx';
 
 $fp = fopen($_file, 'r');
@@ -18,16 +17,11 @@ $fp = fopen($_file1, 'r');
 $contens1 = fread($fp,  filesize($_file1));
 fclose($fp);
 
-
 $fp = fopen($new_file, 'w');
 fwrite($fp,$contens.$contens1);
 fclose($fp);
 
-
-
 exit;
-
-
 
 
 $file_size = filesize($file);

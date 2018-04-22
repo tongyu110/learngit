@@ -23,7 +23,7 @@
 			if(!($callfun instanceof \Closure)) {
 				throw new \Exception('Function Param Error callfun');
 			}
-
+                        
 			$file_size = filesize($file);
 			$file_size_m = round($file_size / 1024 / 1024,2);
 
@@ -35,7 +35,7 @@
 			}else {
 				//ini_set('memory_limit',self::$config['memory_limit']);
 				set_time_limit(self::$config['set_time_limit']);
-
+                                
 				$fh = fopen($file,'r');
 				while(!feof($fh)) {
 					$line = fgets($fh);
