@@ -8,8 +8,6 @@
 	}
 	class Loader {
 
-
-
 		public static function autoload($class) {  
 			$file = self::findFile($class); 
 			if(!$file) {

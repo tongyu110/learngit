@@ -14,7 +14,7 @@
 			$content = $_POST['items'];
 			$d = explode(PHP_EOL,$content);
 			var_dump($d);exit;
-
+                        
 		}
 
 		public function output() {
