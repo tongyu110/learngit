@@ -10,11 +10,9 @@ abstract class ITravelTransport {
 }
 
 class PlaneTravelTransport extends ITravelTransport {
-
     public function travel() {
         echo '我们要做飞机去  ---  游玩';
     }
-    
 }
 
 class TrainTravelTransport extends ITravelTransport {

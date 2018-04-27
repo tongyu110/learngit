@@ -89,6 +89,7 @@ abstract class Component {
         // TODO: Implement __call() method.
         foreach($this->_behavior as $_behavior) {
             if(method_exists($_behavior,$name)) {
+                //ReflectionMethod 类报告了一个方法的有关信息。  反射
                 $_method = new ReflectionMethod($_behavior,$name);
                 if($_method->isPublic()) {
                     return call_user_func_array([$_behavior,$name],$arguments);
