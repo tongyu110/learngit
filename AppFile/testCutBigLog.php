@@ -24,6 +24,7 @@ fclose($fp);
 exit;
 
 
+// 分割文件
 $file_size = filesize($file);
 $_size = intval($file_size/2);
 $_size1 = $file_size - $_size;
