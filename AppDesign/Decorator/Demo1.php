@@ -6,7 +6,6 @@
  * https://blog.csdn.net/gdutxiaoxu/article/details/51885105
  * 咖啡店里咖啡中可以加不同的配料–摩卡、牛奶、糖、奶泡；不同的饮品加上不同的配料有不同的价钱
  */
-
 interface Coffee {
     public function getPrice();
     public function getName();
