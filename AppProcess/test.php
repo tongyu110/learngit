@@ -1,4 +1,3 @@
-#!/bin/env php  
 <?php  
 /** A example denoted muti-process application in php 
 * @filename fork.php 
@@ -19,13 +18,6 @@ set_time_limit(0);
 $pid = posix_getpid(); //取得主进程ID  
 $user = posix_getlogin(); //取得用户名  
    
-echo <<<EOD  
-USAGE: [command | expression]  
-input php code to execute by fork a new process  
-input quit to exit  
-   
-        Shell Executor version 1.0.0 by laruence  
-EOD;  
    
 while (true) {  
    
