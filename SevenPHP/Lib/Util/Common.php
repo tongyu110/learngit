@@ -35,4 +35,44 @@ class Common
         return $data;
     }
 
+    /**
+     * +----------------------------------------------------------
+     * 判断是否是移动客户端
+     * +----------------------------------------------------------
+     */
+    function is_mobile() {
+        static $is_mobile;
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        
+        if (isset($is_mobile))
+            return $is_mobile;
+        
+        if (empty($user_agent)) {
+            $is_mobile = false;
+        } else {
+            // 移动端UA关键字
+            $mobile_agents = array (
+                    'Mobile',
+                    'Android',
+                    'Silk/',
+                    'Kindle',
+                    'BlackBerry',
+                    'Opera Mini',
+                    'Opera Mobi' 
+            );
+            
+            $is_mobile = false; 
+            
+            foreach ($mobile_agents as $device) {
+                if (strpos($user_agent, $device) !== false) {
+                    $is_mobile = true;
+                    break;
+                }
+            }
+        }
+        
+        return $is_mobile;
+    }
+
+
 }
