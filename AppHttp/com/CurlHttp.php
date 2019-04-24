@@ -116,6 +116,27 @@
 	    }
 
 
+	    public static function curlXml($url,$xml) {
+
+	    	$ch = curl_init($url);
+	        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	        curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
+	        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	        curl_setopt($ch, CURLOPT_ENCODING, "");
+	        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));
+	        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 跳过证书检查
+	        //curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, true);  //从证书中检查SSL加密算法是否存在
+	        $result = curl_exec($ch); 
+	        if ($errno = curl_errno($ch)) {
+            	$err = curl_error($ch);
+	            throw new Exception($err,$errno);
+	        }
+	        curl_close($ch);
+	        return $result;
+
+	    }
+
+
 
 	}
 
